@@ -1,0 +1,250 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://World/Ground.png" type="Texture" id=2]
+[ext_resource path="res://World/BackGround.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Skeleton.png" type="Texture" id=4]
+[ext_resource path="res://Objects/Cactus (3).png" type="Texture" id=5]
+[ext_resource path="res://Objects/Stone.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Cactus (1).png" type="Texture" id=7]
+[ext_resource path="res://Ninja/Idle__005.png" type="Texture" id=8]
+[ext_resource path="res://Ninja/Idle__009.png" type="Texture" id=9]
+[ext_resource path="res://Ninja/Run__001.png" type="Texture" id=10]
+[ext_resource path="res://Ninja/Run__002.png" type="Texture" id=11]
+[ext_resource path="res://Ninja/Idle__007.png" type="Texture" id=12]
+[ext_resource path="res://Ninja/Run__003.png" type="Texture" id=13]
+[ext_resource path="res://Ninja/Idle__004.png" type="Texture" id=14]
+[ext_resource path="res://Ninja/Idle__006.png" type="Texture" id=15]
+[ext_resource path="res://Ninja/Idle__008.png" type="Texture" id=16]
+[ext_resource path="res://Ninja/Run__000.png" type="Texture" id=17]
+[ext_resource path="res://Ninja/Run__004.png" type="Texture" id=18]
+[ext_resource path="res://Ninja/Run__005.png" type="Texture" id=19]
+[ext_resource path="res://Ninja/Idle__003.png" type="Texture" id=20]
+[ext_resource path="res://Ninja/Idle__002.png" type="Texture" id=21]
+[ext_resource path="res://Ninja/Idle__001.png" type="Texture" id=22]
+[ext_resource path="res://Ninja/Idle__000.png" type="Texture" id=23]
+[ext_resource path="res://Ninja/Jump__001.png" type="Texture" id=24]
+[ext_resource path="res://Ninja/Jump__002.png" type="Texture" id=25]
+[ext_resource path="res://Ninja/Jump__004.png" type="Texture" id=26]
+[ext_resource path="res://Ninja/Run__009.png" type="Texture" id=27]
+[ext_resource path="res://Ninja/Jump__005.png" type="Texture" id=28]
+[ext_resource path="res://Ninja/Run__007.png" type="Texture" id=29]
+[ext_resource path="res://Ninja/Run__008.png" type="Texture" id=30]
+[ext_resource path="res://Ninja/Jump__006.png" type="Texture" id=31]
+[ext_resource path="res://Ninja/Jump__007.png" type="Texture" id=32]
+[ext_resource path="res://Ninja/Jump__003.png" type="Texture" id=33]
+[ext_resource path="res://Ninja/Jump__009.png" type="Texture" id=34]
+[ext_resource path="res://Ninja/Run__006.png" type="Texture" id=35]
+[ext_resource path="res://Ninja/Jump__008.png" type="Texture" id=36]
+[ext_resource path="res://Ninja/Jump__000.png" type="Texture" id=37]
+[ext_resource path="res://Ninja/Dead__002.png" type="Texture" id=38]
+[ext_resource path="res://Ninja/Dead__003.png" type="Texture" id=39]
+[ext_resource path="res://Ninja/Dead__000.png" type="Texture" id=40]
+[ext_resource path="res://Ninja/Dead__004.png" type="Texture" id=41]
+[ext_resource path="res://Ninja/Dead__001.png" type="Texture" id=42]
+[ext_resource path="res://Ninja/Dead__005.png" type="Texture" id=43]
+[ext_resource path="res://Ninja/Dead__006.png" type="Texture" id=44]
+[ext_resource path="res://Ninja/Dead__007.png" type="Texture" id=45]
+[ext_resource path="res://Ninja/Dead__008.png" type="Texture" id=46]
+[ext_resource path="res://Ninja/Dead__009.png" type="Texture" id=47]
+[ext_resource path="res://Scripts/BackGround.gd" type="Script" id=48]
+[ext_resource path="res://Manager.gd" type="Script" id=49]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1035.2, 96.687 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 31.9344, 44.0884 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 49.0032, 51.1754 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "Dead",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 33 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 35 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 21.0851
+height = 52.3804
+
+[node name="Root" type="Node2D"]
+script = ExtResource( 49 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Control" type="Control" parent="Camera2D"]
+margin_left = -609.0
+margin_top = -302.0
+margin_right = 608.0
+margin_bottom = 305.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Camera2D/Control"]
+anchor_left = 0.809
+anchor_top = 0.875
+anchor_right = 0.883
+anchor_bottom = 0.967
+margin_left = 0.44696
+margin_top = -0.125061
+margin_right = 0.389038
+margin_bottom = 0.0309448
+action_mode = 0
+text = "Jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Camera2D/Control"]
+anchor_left = 0.087
+anchor_right = 0.175
+anchor_bottom = 0.084
+margin_left = 0.120995
+margin_top = 8.0
+margin_right = 0.0249786
+margin_bottom = 0.0119972
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+z_index = -2
+texture = ExtResource( 3 )
+script = ExtResource( 48 )
+
+[node name="Ground" type="Sprite" parent="BackGround"]
+position = Vector2( -2.63092, 260.298 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround/Ground"]
+position = Vector2( 2.63092, -260.298 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround/Ground/StaticBody2D"]
+position = Vector2( -8.07526, 389.085 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Cactus (3)" type="Sprite" parent="BackGround" groups=["Obstacles"]]
+position = Vector2( 816.599, 219.434 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround/Cactus (3)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround/Cactus (3)/StaticBody2D"]
+position = Vector2( 0, 2.15691 )
+shape = SubResource( 4 )
+
+[node name="Cactus (1)" type="Sprite" parent="BackGround" groups=["Obstacles"]]
+position = Vector2( 53.5195, 222.251 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround/Cactus (1)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround/Cactus (1)/StaticBody2D"]
+shape = SubResource( 5 )
+
+[node name="BackGround2" type="Sprite" parent="."]
+position = Vector2( 1220, 0 )
+scale = Vector2( 0.6, 0.6 )
+z_index = -2
+texture = ExtResource( 3 )
+script = ExtResource( 48 )
+
+[node name="Ground" type="Sprite" parent="BackGround2"]
+position = Vector2( -2.63074, 260.298 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround2/Ground"]
+position = Vector2( 2.63074, -260.298 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround2/Ground/StaticBody2D"]
+position = Vector2( -8.07526, 389.085 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Stone" type="Sprite" parent="BackGround2" groups=["Obstacles"]]
+position = Vector2( 298.261, 239.996 )
+texture = ExtResource( 6 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround2/Stone"]
+position = Vector2( 0.417236, 0 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackGround2/Stone/StaticBody2D"]
+polygon = PoolVector2Array( -57.1511, 22.4207, -4.16159, -35.1585, 32.9728, -21.8068, 47.159, -2.61375, 61.7624, 21.1689 )
+
+[node name="Skeleton" type="Sprite" parent="BackGround2" groups=["Obstacles"]]
+position = Vector2( -755.079, 251.127 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround2/Skeleton"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackGround2/Skeleton/StaticBody2D"]
+polygon = PoolVector2Array( -73.0038, 16.9939, -60.3197, 0.742416, -40.1044, -21.4548, -1.25928, -12.7345, 19.3524, -19.0765, 37.9821, -9.56343, 66.5214, 1.93153, 75.6381, 15.012 )
+
+[node name="Cactus (3)" type="Sprite" parent="BackGround2" groups=["Obstacles"]]
+position = Vector2( 816.599, 219.434 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround2/Cactus (3)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround2/Cactus (3)/StaticBody2D"]
+position = Vector2( 0, 2.15691 )
+shape = SubResource( 4 )
+
+[node name="Cactus (1)" type="Sprite" parent="BackGround2" groups=["Obstacles"]]
+position = Vector2( -215.225, 213.531 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BackGround2/Cactus (1)"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround2/Cactus (1)/StaticBody2D"]
+shape = SubResource( 5 )
+
+[node name="Player" type="RigidBody2D" parent="."]
+position = Vector2( -400, 115 )
+z_index = 1
+mode = 2
+gravity_scale = 4.0
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+jumpForce = 250
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+scale = Vector2( 0.2, 0.2 )
+z_index = 1
+frames = SubResource( 3 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -0.527039, -0.263519 )
+z_index = 1
+shape = SubResource( 6 )
+
+[connection signal="pressed" from="Camera2D/Control/Button" to="Player" method="_on_Button_pressed"]
+[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
